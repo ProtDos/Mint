@@ -47,6 +47,7 @@ python3 main.py
 - Steam
 - Discord
 - Reddit
+- Ogu
 
 ## Features
 
