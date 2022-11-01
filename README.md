@@ -6,6 +6,7 @@ Mint is a very godly tool that can find the provided user in almost all of the p
 * [Usage](#usage)
 * [Preview](#preview)
 * [License](#license)
+* [Features](#features)
 * [Credits](#credits)
 
 ## Installation
@@ -46,6 +47,13 @@ python3 main.py
 - Steam
 - Discord
 - Reddit
+
+## Features
+
+- Proxy generation and rotation
+- Uses sockets (way faster)
+- Uses HTTPS Proxy
+- User will be saved if found
 
 ## License
 
