@@ -39,6 +39,8 @@ class ProxyRotation:
                 self.steam(username, self.generate())
             elif social_media == "discord":
                 self.discord(username, self.generate())
+            elif social_media == "ogu":
+                self.ogu(username, self.generate())
         except Exception as error:
             self.utils.logs(f"{error}")
 
@@ -227,6 +229,17 @@ class ProxyRotation:
             if response.status_code == 200:
                 self.utils.logs(f"[{response.status_code}] Found! Saving it on a file and trying another social media...")
                 self.save(social_media="discord", username=username)
+            else:
+                self.utils.logs(f"[{response.status_code}] Not found! Trying another social media...")
+        except Exception as error:
+            self.utils.logs(f"{error}")
+
+    def ogu(self, username, proxy):
+        try:
+            response = requests.get(f"https://ogu.gg/{username}", proxies={"https": proxy}, timeout=10)
+            if response.status_code == 200:
+                self.utils.logs(f"[{response.status_code}] Found! Saving it on a file and trying another social media...")
+                self.save(social_media="ogu", username=username)
             else:
                 self.utils.logs(f"[{response.status_code}] Not found! Trying another social media...")
         except Exception as error:
